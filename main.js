@@ -9,9 +9,14 @@ let inputPassword = document.querySelector('#input-password');
     }
 
     function copyPassword() {
-        inputPassword.select();
-        document.execCommand('copy');
-        alert('Password copied successfully !');
+        if(inputPassword.value == '') {
+            alert('No password was generated !');
+        }
+        else {
+            inputPassword.select();
+            document.execCommand('copy');
+            alert('Password copied successfully !');
+        }
     }
 
 buttonGenerate.addEventListener('click', generatePassword);
